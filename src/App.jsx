@@ -1,4 +1,4 @@
-
+/* eslint-disable no-unused-vars */
 import Sidebar from "./components/Sidebar"
 import Player from "./components/Player"
 import Display from "./components/Display"

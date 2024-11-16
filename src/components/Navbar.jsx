@@ -13,9 +13,9 @@ const Navbar = () => {
             </div>
 
             <div className='flex items-center gap-4'>
-                <p className='bg-white text-black text-[15px] px-4 py-1 rounded-2xl hidden md:block cursor-pointer'>Explore Premium</p>
-                <p className='bg-black py-1 px-3 rounded-2xl text-[15px] cursor-pointer'>Install App</p>
-                <p className='bg-purple-500 text-black w-7 h-7 rounded-full flex items-center justify-center'>D</p>
+                <button type='button' onClick={() => navigate('/login')} className='bg-white h-[48px] justify-center items-center text-black text-[16px] px-8 py-2 rounded-full hidden md:flex cursor-pointer'>Đăng nhập</button>
+                <button className='bg-black h-[48px] justify-center items-center py-2 px-8 rounded-full text-[16px] hidden md:flex cursor-pointer'>Đăng ký</button>
+                {/*<p className='bg-purple-500 text-black w-7 h-7 rounded-full flex items-center justify-center'>D</p>*/}
             </div>
         </div>
 
