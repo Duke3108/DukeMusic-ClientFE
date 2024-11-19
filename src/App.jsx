@@ -5,8 +5,9 @@ import Display from "./components/Display"
 import { useContext } from "react"
 import {PlayerContext} from './context/PlayerContext.jsx'
 
-const App = () => {
+export const url = 'http://localhost:4000'
 
+const App = () => {
   const {audioRef,track,songsData,albumsData} = useContext(PlayerContext)
   return (
     <div className="h-screen bg-black">

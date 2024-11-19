@@ -27,6 +27,11 @@ import google_icon from './google.png'
 import fb_icon from './communication.png'
 import apple_icon from './apple_logo.png'
 import phone_icon from './phone.png'
+import warning_icon from './warning_icon.png'
+import check_icon from './check_icon.png'
+import greencheck from './greencheck.png'
+import blackwarning from './blackwarning.png'
+import download_icon from './download.png'
 
 export const assets = {
     bell_icon,
@@ -57,5 +62,10 @@ export const assets = {
     google_icon,
     fb_icon,
     apple_icon,
-    phone_icon
+    phone_icon,
+    warning_icon,
+    check_icon,
+    greencheck,
+    blackwarning,
+    download_icon
 }

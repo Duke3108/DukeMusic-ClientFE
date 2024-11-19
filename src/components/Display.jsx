@@ -4,6 +4,7 @@ import DisplayAlbum from "./DisplayAlbum"
 import { useEffect, useRef } from "react"
 import { useContext } from "react"
 import { PlayerContext } from "../context/PlayerContext"
+import Playlist from "./Playlist"
 
 
 const Display = () => {
@@ -29,6 +30,7 @@ const Display = () => {
         ? <Routes>
           <Route path="/" element={<DisplayHome/>}/>
           <Route path="/album/:id" element={<DisplayAlbum album={albumsData.find((x) => (x._id == albumId))}/>}/>
+          <Route path="/playlist/:id" element={<Playlist/>}/>
         </Routes>
         : null
         }
