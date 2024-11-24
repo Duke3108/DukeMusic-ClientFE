@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react"
-import { assets } from "../assets/assets"
+import { assets } from "../../assets/assets"
 import { useNavigate } from "react-router-dom"
 import { useLocation } from 'react-router-dom';
 
 const Step1 = () => {
 
-  const[isValidPassword, setIsValidPassword ] = useState(true)
+  const[isValidPassword, setIsValidPassword ] = useState(false)
   const[password, setPassword ] = useState("")
   const[check1, setCheck1 ] = useState(false)
   const[check2, setCheck2 ] = useState(false)
@@ -32,6 +32,8 @@ const Step1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(!password)
+      navigate("/signup.step1")
     if (isValidPassword) {
       navigate("/signup/step2", { state: { email, password } });
     }

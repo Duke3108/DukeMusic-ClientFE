@@ -1,11 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useParams } from "react-router-dom"
-import Navbar from "./Navbar"
 import { assets } from "../assets/assets"
-import { useContext } from "react"
 import { PlayerContext } from "../context/PlayerContext"
-import { useState } from "react"
-import { useEffect } from "react"
+import { useState, useEffect,useContext } from "react"
 
 
 const DisplayAlbum = ({album}) => {
@@ -24,7 +21,6 @@ const DisplayAlbum = ({album}) => {
 
   return albumData ? (
     <>
-        <Navbar/>
         <div className="mt-10 flex gap-8 flex-col md:flex-row md:items-end">
             <img className="w-48 rounded" src={albumData.image} alt=""/>
             <div className="flex flex-col">
@@ -41,7 +37,7 @@ const DisplayAlbum = ({album}) => {
             </div>
         </div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 mt-10 mb-4 pl-2 text-[#a7a7a7]">
+        <div className="grid grid-cols-3 sm:grid-cols-4 mt-10 mb-4 pl-2 text-white">
             <p><b className="mr-4">#</b>Title</p>
             <p></p>
             <p></p>
@@ -49,10 +45,10 @@ const DisplayAlbum = ({album}) => {
         </div>
         <hr/>
         {
-            songsData.filter((item) => item.album === album.name ).map((item, index) => (
+            songsData.filter((item) => item.albumId === album._id ).map((item, index) => (
                 <div onClick={() => playWithId(item._id)} key={index} className="grid grid-cols-3 sm:grid-cols-4 gap-2 p-2 items-center text-[#a7a7a7] hover:bg[#ffffff2b] cursor-pointer">
                     <p className="text-white">
-                        <b className="mr-4 text-[#a7a7a7]">{index+1}</b>
+                        <b className="mr-4 text-white">{index+1}</b>
                         <img className="inline w-10 mr-5" src={item.image} alt=""/>
                         {item.name}
                     </p>

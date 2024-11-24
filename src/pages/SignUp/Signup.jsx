@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react"
-import { assets } from "../assets/assets"
+import { assets } from "../../assets/assets"
 import { useNavigate } from "react-router-dom"
 
 const Signup = () => {

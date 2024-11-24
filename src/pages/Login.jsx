@@ -1,18 +1,27 @@
 import { useState } from "react"
 import { assets } from "../assets/assets"
-import {useDispatch} from "react-redux"
+import {useDispatch, useSelector} from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { loginUser } from "../redux/apiRequest"
+
 
 const Login = () => {
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const [err, setErr] = useState("")
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const msg = useSelector((state) => state.auth?.msg)
+
 
     const handleLogin = (e) => {
         e.preventDefault()
+
+        if(msg){
+            setErr(msg)
+        }
+
         const user = {
             email:username,
             name: username,
@@ -22,7 +31,7 @@ const Login = () => {
     }
 
   return (
-    <div className="h-screen bg-gradient-to-t from-black to-[#242424] flex items-center justify-center ">
+    <div className="h-screen overflow-auto bg-gradient-to-t from-black to-[#242424] flex items-center justify-center ">
         <div className="w-[734px] pb-8 bg-[#121212] flex flex-col font-bold items-center justify-center rounded-lg text-white">
             <div className="h-[76px] flex justify-center items-center pt-8 pb-2">
                 <img className="h-[60px] w-[60px]" src={assets.Duke_smLogo} alt="logo"/>
@@ -68,6 +77,10 @@ const Login = () => {
                         <div className="inline-block text-[13px] pb-2"><label>Mật khẩu</label></div>
                         <input onChange={(e) => setPassword(e.target.value)} className="p-3 w-[324px] h-12 font-normal bg-transparent border border-white rounded-md" type="password" placeholder="Mật khẩu"/>
                     </div>
+                    {err && <div className="flex my-1">
+                        <img className="size-4 mr-1 mt-1 " src={assets.warning_icon} alt="warning_icon"/>
+                        <p className="font-normal text-[14px] text-red-400">{err}</p>
+                    </div>} 
                 </div>
                 
                 <div className="pb-8 flex items-center justify-center">

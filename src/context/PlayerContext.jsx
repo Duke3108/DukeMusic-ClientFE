@@ -13,6 +13,8 @@ const PlayerContextProvider = (props) => {
 
     const [songsData, setSongsData] = useState([])
     const [albumsData, setAlbumsData] = useState([])
+    const [artistsData, setArtistsData] = useState([])
+    const [playlistData, setPlaylistData] = useState([])
     const [track, setTrack] = useState(songsData[0])
     const [playStatus, setPlayStatus] = useState(false)
     const [time, setTime] = useState({
@@ -90,6 +92,24 @@ const PlayerContextProvider = (props) => {
         }
     }
 
+    const getArtistData = async () => {
+        try {
+            const response = await axios.get(`${url}/api/artist/`)
+            setArtistsData(response.data.artists)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const getPlaylistData = async () => {
+        try {
+            const response = await axios.get(`${url}/api/playlist/`)
+            setPlaylistData(response.data.playlists)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     useEffect(() => {
         setTimeout(() => {
             audioRef.current.ontimeupdate = () => {
@@ -110,7 +130,9 @@ const PlayerContextProvider = (props) => {
 
     useEffect(() => {
         getSongsData()
-        getAlbumsData()
+        getAlbumsData(),
+        getArtistData(),
+        getPlaylistData()
     },[])
 
     const contextValue = {
@@ -124,7 +146,7 @@ const PlayerContextProvider = (props) => {
         playWithId,
         previous,next,
         seekSong,
-        songsData,albumsData
+        songsData,albumsData,artistsData,playlistData
     }
 
     return (

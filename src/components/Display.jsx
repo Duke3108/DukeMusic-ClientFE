@@ -4,7 +4,9 @@ import DisplayAlbum from "./DisplayAlbum"
 import { useEffect, useRef } from "react"
 import { useContext } from "react"
 import { PlayerContext } from "../context/PlayerContext"
-import Playlist from "./Playlist"
+import DisplayProfile from "./DisplayProfile"
+import DisplayPlaylist from "./DisplayPlaylist"
+import DisplayArtist from "./DisplayArtist"
 
 
 const Display = () => {
@@ -25,16 +27,18 @@ const Display = () => {
   })
 
   return (
-    <div ref={displayRef} className="w-[100%] m-2 px-6 pt-4 rounded bg-[#121212] text-white overflow-auto lg:w-[80%] lg:ml-0">
+    <div ref={displayRef} className=" rounded-md h-full flex-col gap-2 text-white w-full flex m-2 mt-0 px-6  bg-[#121212] overflow-auto lg:w-fulll lg:ml-0">
         {albumsData.length > 0
         ? <Routes>
           <Route path="/" element={<DisplayHome/>}/>
           <Route path="/album/:id" element={<DisplayAlbum album={albumsData.find((x) => (x._id == albumId))}/>}/>
-          <Route path="/playlist/:id" element={<Playlist/>}/>
+          <Route path="/playlist:id" element={<DisplayPlaylist/>}/>
+          <Route path="/user/:id" element={<DisplayProfile/>}/>
+          <Route path="/artist/:id" element={<DisplayArtist/>}/>
         </Routes>
         : null
         }
-        
+    
     </div>
   )
 }

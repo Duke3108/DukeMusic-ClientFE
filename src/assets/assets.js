@@ -32,6 +32,8 @@ import check_icon from './check_icon.png'
 import greencheck from './greencheck.png'
 import blackwarning from './blackwarning.png'
 import download_icon from './download.png'
+import Duke_smLogo_white from './Duke_smLogo_white.png'
+import music from './music.png'
 
 export const assets = {
     bell_icon,
@@ -67,5 +69,7 @@ export const assets = {
     check_icon,
     greencheck,
     blackwarning,
-    download_icon
+    download_icon,
+    Duke_smLogo_white,
+    music
 }
