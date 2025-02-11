@@ -9,11 +9,13 @@ const ArtistItem = ({id,image,name}) => {
 
   return (
     
-        <div onClick={() => navigate(`/artist/${id}`)} className="rounded-md p-4 flex flex-col gap-2 hover:bg-[rgba(255,255,255,0.1)]">
+        <div onClick={() => navigate(`/artist/${id}`)} className="w-1/5 flex flex-col gap-4 p-2 px-3 rounded-md cursor-pointer hover:bg-[#ffffff26]">
 
-            <div>
-                <img className="rounded-full size-[150px]" src={image} alt=""/>
+            <div className="">
+                <img className="w-full rounded-full h-[200px]" src={image} alt=""/>
             </div>
+                
+            
 
             <div className="flex flex-col gap-1">
                 <p>{name}</p>

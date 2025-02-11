@@ -14,7 +14,6 @@ const PlayerContextProvider = (props) => {
     const [songsData, setSongsData] = useState([])
     const [albumsData, setAlbumsData] = useState([])
     const [artistsData, setArtistsData] = useState([])
-    const [playlistData, setPlaylistData] = useState([])
     const [track, setTrack] = useState(songsData[0])
     const [playStatus, setPlayStatus] = useState(false)
     const [time, setTime] = useState({
@@ -101,14 +100,6 @@ const PlayerContextProvider = (props) => {
         }
     }
 
-    const getPlaylistData = async () => {
-        try {
-            const response = await axios.get(`${url}/api/playlist/`)
-            setPlaylistData(response.data.playlists)
-        } catch (error) {
-            console.log(error)
-        }
-    }
 
     useEffect(() => {
         setTimeout(() => {
@@ -131,8 +122,7 @@ const PlayerContextProvider = (props) => {
     useEffect(() => {
         getSongsData()
         getAlbumsData(),
-        getArtistData(),
-        getPlaylistData()
+        getArtistData()
     },[])
 
     const contextValue = {
@@ -146,7 +136,7 @@ const PlayerContextProvider = (props) => {
         playWithId,
         previous,next,
         seekSong,
-        songsData,albumsData,artistsData,playlistData
+        songsData,albumsData,artistsData
     }
 
     return (

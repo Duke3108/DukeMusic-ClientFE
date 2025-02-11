@@ -7,7 +7,6 @@ import ArtistItem from "./ArtistItem"
 const DisplayHome = () => {
 
   const {songsData, albumsData, artistsData} = useContext(PlayerContext)
-
   return (
     <>
       

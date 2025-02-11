@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { assets } from "../assets/assets"
 import {useDispatch, useSelector} from "react-redux"
 import { useNavigate } from "react-router-dom"
@@ -18,17 +18,19 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault()
 
-        if(msg){
-            setErr(msg)
-        }
-
+        
         const user = {
-            email:username,
             name: username,
             password: password
         }
         loginUser(user, dispatch, navigate)
     }
+
+    useEffect(() => {
+        if(msg){
+            setErr(msg)
+        }
+    },[msg])
 
   return (
     <div className="h-screen overflow-auto bg-gradient-to-t from-black to-[#242424] flex items-center justify-center ">

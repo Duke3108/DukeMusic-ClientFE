@@ -1,8 +1,16 @@
-import React from 'react'
+import { useLocation } from 'react-router-dom';
 
 const DisplayPlaylist = () => {
+  const location = useLocation();
+  const { state } = location || {};
+  const { dataPlaylist } = state || {};
+
+  console.log(dataPlaylist)
   return (
-    <div>DisplayPlaylist</div>
+    <div className=' text-white'>
+      playlist
+        {dataPlaylist?.name}
+    </div>
   )
 }
 

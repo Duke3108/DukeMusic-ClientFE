@@ -32,7 +32,7 @@ const Display = () => {
         ? <Routes>
           <Route path="/" element={<DisplayHome/>}/>
           <Route path="/album/:id" element={<DisplayAlbum album={albumsData.find((x) => (x._id == albumId))}/>}/>
-          <Route path="/playlist:id" element={<DisplayPlaylist/>}/>
+          <Route path="/playlist/:id" element={<DisplayPlaylist/>}/>
           <Route path="/user/:id" element={<DisplayProfile/>}/>
           <Route path="/artist/:id" element={<DisplayArtist/>}/>
         </Routes>

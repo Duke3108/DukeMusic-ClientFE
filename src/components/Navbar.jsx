@@ -32,16 +32,16 @@ const Navbar = () => {
             </div>
 
             <div className='flex-1 flex w-full'>
-                <button onClick={() => navigate('/')} className='px-3 bg-[#1F1F1F] rounded-full'>
+                <button onClick={() => navigate('/')} className='px-3 hidden justify-center items-center md:flex bg-[#1F1F1F] rounded-full'>
                     <img className='size-6' src={assets.home_icon} alt='home'/>
                 </button>
                 <div className='px-2 relative w-full'>
                     <form className='flex w-full relative'>
-                        <div className='flex items-center justify-center size-12 rounded-l-full bg-[#1F1F1F]'>
-                            <img className='px-3 ' src={assets.search_icon} alt='search-icon'/>
+                        <div className='flex items-center  justify-center size-12 rounded-l-full bg-[#1F1F1F]'>
+                            <img className='px-3' src={assets.search_icon} alt='search-icon'/>
                         </div>
-                        <div className='flex items-center rounded-r-full w-full pr-10 bg-[#1F1F1F]'>
-                            <input className='bg-[#1F1F1F]' placeholder='Bạn muốn phát nội dung gì?'/>
+                        <div className='flex items-center text-white rounded-r-full w-full pr-10 bg-[#1F1F1F]'>
+                            <input className='bg-[#1F1F1F] border-none outline-none' placeholder='Bạn muốn phát nội dung gì?'/>
                         </div>
                     </form>
                    

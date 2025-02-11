@@ -34,6 +34,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Route path="/user/:id" element={<DisplayProfile/>}/>
                 <Route path="/album/:id" element={<DisplayAlbum/>}/>
                 <Route path="/artist/:id" element={<DisplayArtist/>}/>
+                <Route path="*" element={<NoteFound />} />
               </Route>
               <Route path="/login" element={<Login/>}/>
               <Route path="/signup" element={<Signup/>}/>
